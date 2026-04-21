@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Магазин курсів</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="flash-msg">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="container">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/html.png') }}" alt="HTML">
+            <h3>HTML Основи</h3>
+            <a href="/buy/HTML Основи"><button>Купити</button></a>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/python.png') }}" alt="Python">
+            <h3>Python для WEB</h3>
+            <a href="/buy/Python для WEB"><button>Купити</button></a>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/sql.png') }}" alt="SQL">
+            <h3>SQL Бази даних</h3>
+            <a href="/buy/SQL Бази даних"><button>Купити</button></a>
+        </div>
+    </div>
+</body>
+</html>
